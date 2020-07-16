@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+</head>
+<style type="text/css">
+	*{		margin:0;
+			padding:0;
+		  animation: colors 1s ease-in;
+		  background: url('https://wallpaperset.com/w/full/d/6/5/380246.jpg');
+		  font-family:sans-serif;
+		background-image: url('image/blcktheme.jpg');
+	}
+		@keyframes colors{
+			
+			from{color: white;
+				border:white;
+			}
+			to{}
+		}
+
+		/*container of calculator*/
+		.calculator-container{
+			width: 400px;
+			height:auto;
+			border:2px red solid;
+			transform: translate(-50%,-50%);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			padding-top:25px;
+			border-radius: 20px; 
+			color:white;
+		}
+		/*this is conatiner of the text*/
+		.textbox-container{
+			
+			width: 95%;
+			height: 95px;
+			margin:auto ;
+
+		}
+		/*this is for the textbox*/
+		input[type=text]{
+			width:99%;
+			height:99%;
+			color:red;
+			font-size: 25px;
+			
+		}
+		/*this is for the button*/
+		.button-container{
+			margin:25px;
+
+		}
+		button{
+			width: 50px;
+			height: 50px;
+			font-weight: bold;
+			font-size: 20px;
+			margin:16px;
+			background: none;
+			border:none;
+			color: rgba(255,255,255,0.5);
+			transition: .4s;
+		}
+		/*for the hover effect*/
+		button:hover{
+			transform: scale(1.1);
+			border-color: red;
+			color: red;
+
+		}
+		
+		
+</style>
+<body>
+	<div class="calculator">
+		<div class="calculator-container">
+	<div class="textbox-container">
+		<input type="text" id="TextArea"/>
+	</div>
+	<div class="button-container">
+		<!-- creating the different button for operator and operand and calling the its repective function -->
+		<button onclick="c()">C</button>
+		<button onclick="Sqrt()" >Sqrt</button>
+		<button onclick="del()" >Del</button>
+		<button onclick="cube()" >Cube</button>
+		<br>
+		<button  onclick="seven()" value="7">7</button>
+		<button  onclick="eight()" value="8">8</button>
+		<button  onclick="nine()" value="9">9</button>
+		<button  onclick="sum()" value="+">+</button>
+		<br>
+		<button  onclick="six()" value="6">6</button>
+		<button  onclick="five()" value="5">5</button>
+		<button  onclick="four()"  value="4">4</button>
+		<button  onclick="sub()" value="-">-</button>
+		<br>
+		<button  onclick="three()" value="3">3</button>
+		<button  onclick="two()" value="2">2</button>
+		<button  onclick="one()" value="1">1</button>
+		<button  onclick="mul()" value="*">x</button>
+		<br>
+		<button  onclick="dot()" value=".">.</button>
+		<button  onclick="zero()" value="0">0</button>
+		<button  onclick="result()" value="=">=</button>
+		<button  onclick="divide()" value="/">/</button>
+	</div>
+</div>
+	</div>
+	<!-- starting the inline javascrit -->
+<script type="text/javascript">
+	<!-- for the java script -->
+	function cube(){
+		// creating the variable a to store the data from the text area
+		var a=document.getElementById('TextArea').value;
+		// creting the variable b in which a variable is mutiple 3times to get the cube value
+		var b=a*a*a;
+		//printing the value of b in text area
+		document.getElementById('TextArea').value=b;
+	}
+	// for dot function >>> .
+	function dot(){
+		document.getElementById("TextArea").value+=".";
+		// printing the dot in text area
+	}
+	// for one function
+	function one(){
+		// printing the one in textarea
+		document.getElementById("TextArea").value+="1";
+	}
+	//for the two function
+	function two(){
+		// printing the two in textarea
+		document.getElementById("TextArea").value+="2";
+	}
+	// for the three function
+	function three(){
+		// printing the three in textarea
+		document.getElementById("TextArea").value+="3";
+	}
+	// for the four function
+	function four(){
+		// printing the three in textarea
+		document.getElementById("TextArea").value+="4";
+	}
+	// for the five
+	function five(){
+		// printing the five in textarea
+		document.getElementById("TextArea").value+="5";
+	}
+	// for the six
+	function six(){
+		// printing the  six in textarea
+		document.getElementById("TextArea").value+="6";
+	}
+	// for the seven
+	function seven(){
+		// printing the seven in textarea
+		document.getElementById("TextArea").value+="7";
+	}
+	// for the  eight
+	function eight(){
+		// printing the eight in textarea
+		document.getElementById("TextArea").value+="8";
+	}
+	// for the nine 
+	function nine(){
+		// printing the  nine n textarea
+		document.getElementById("TextArea").value+="9";
+	}
+	// for the  zero
+	function zero(){
+		// printing the zero in textarea
+		document.getElementById("TextArea").value+="0";
+	}
+	// for the  mul 
+	function mul(){
+		// printing the  mul in textarea
+		document.getElementById("TextArea").value+="*";
+	}
+	// for the divide
+	function divide(){
+		// printing thedivide in textarea
+		document.getElementById("TextArea").value+="/";
+	}
+	// for the  sub
+	function sub(){
+		// printing the sub in textarea
+		document.getElementById("TextArea").value+="-";
+	}
+	// for the sum
+	function sum(){
+		// printing the sum in textarea
+		document.getElementById("TextArea").value+="+";
+	}
+	// for the clear
+	function c(){
+		// printing the clear in textarea
+	document.getElementById("TextArea").value="";
+	}
+	// for the sqrt
+	function Sqrt(){
+		// storing the value from the textarea in variable a
+	var a=document.getElementById("TextArea").value;
+	// storing the multipication of a vaiable two times
+	b=a*a;
+	// console.log(b);
+	// printing the value of b
+	document.getElementById("TextArea").value=b;
+	}
+	// for the result
+	function result(){
+	// storing the value from the string 
+		var a=	document.getElementById("TextArea").value
+		// conditioning if there if a variable
+	if(a){
+		// autotmatic evaluating with operand with operateor and  printing
+	document.getElementById("TextArea").value=eval(a);
+		}
+	}
+	// for the back space
+	function del(){
+	// storing the value got from the textarea
+		var exp=document.getElementById("TextArea").value;
+		// deleting the
+		document.getElementById("TextArea").value=exp.substring(0,exp.length-1);
+	}
+
+
+</script>
+</body>
+</html>
